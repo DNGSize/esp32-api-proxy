@@ -1,7 +1,6 @@
-
 from flask import Flask, request, jsonify
 import requests
-
+import json
 app = Flask(__name__)
 
 API_BASE = "https://test-aoc.araymond.com.cn/seeyon/rest"
