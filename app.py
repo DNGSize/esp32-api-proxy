@@ -45,3 +45,5 @@ def start_process():
 @app.route("/")
 def home():
     return "ESP32 API Proxy is running!"
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=10000)
