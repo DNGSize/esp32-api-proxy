@@ -51,7 +51,7 @@ if __name__ == '__main__':
 @app.route("/test", methods=["GET"])
 def test_vpn():
     try:
-        resp = requests.get("http://10.10.10.1:5000/health")  # or any port your server listens on
+        resp = requests.get("http://10.10.10.1:5000")  # or any port your server listens on
         return f"VPN connection OK: {resp.text}", 200
     except Exception as e:
         return f"VPN connection FAILED: {e}", 500
