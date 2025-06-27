@@ -47,3 +47,11 @@ def home():
     return "ESP32 API Proxy is running!"
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=10000)
+
+@app.route("/test", methods=["GET"])
+def test_vpn():
+    try:
+        resp = requests.get("http://10.10.10.1:5000/health")  # or any port your server listens on
+        return f"VPN connection OK: {resp.text}", 200
+    except Exception as e:
+        return f"VPN connection FAILED: {e}", 500
